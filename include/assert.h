@@ -5,7 +5,7 @@
 #ifndef _ASSERT_H
 #define _ASSERT_H
 
-#include "syscfg/syscfg.h"
+//#include "syscfg/syscfg.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -27,13 +27,13 @@ extern "C" {
 extern void __assert_func(const char *, int, const char *, const char *)
     __attribute((noreturn));
 
-#if MYNEWT_VAL(BASELIBC_ASSERT_FILE_LINE)
-#define assert(x) ((x) ? (void)0 : \
-    __assert_func(__FILE__, __LINE__, NULL, NULL))
-#else
+//#if MYNEWT_VAL(BASELIBC_ASSERT_FILE_LINE)
+//#define assert(x) ((x) ? (void)0 : \
+//    __assert_func(__FILE__, __LINE__, NULL, NULL))
+//#else
 #define assert(x) ((x) ? (void)0 : \
     __assert_func(NULL, 0, NULL, NULL))
-#endif
+//#endif
 
 
 #endif
